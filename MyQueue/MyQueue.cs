@@ -1,12 +1,12 @@
-﻿using System;
-using MyLinkedList;
+﻿using MyLinkedList;
+using System;
 
 namespace MyQueue
 {
     public class MyQueue<T>
     {
-        Node<T> Head = new Node<T>();
-        Node<T> Tail = new Node<T>();
+        private Node<T> Head = new Node<T>();
+        private Node<T> Tail = new Node<T>();
         private int count;
 
         public MyQueue()

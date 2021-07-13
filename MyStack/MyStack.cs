@@ -1,11 +1,11 @@
-﻿using System;
-using MyLinkedList;
+﻿using MyLinkedList;
+using System;
 
 namespace MyStack
 {
     public class MyStack<T>
     {
-        Node<T> Top = new Node<T>();
+        private Node<T> Top = new Node<T>();
         public int Count;
 
         /// <summary>

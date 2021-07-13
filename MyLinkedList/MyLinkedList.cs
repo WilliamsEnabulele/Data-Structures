@@ -1,10 +1,9 @@
-﻿using System;
+﻿ using System;
 
 namespace MyLinkedList
 {
     public class MyLinkedList<T>
     {
-
         private Node<T> Head { get; set; }
         public int count { get; set; }
 
@@ -109,7 +108,6 @@ namespace MyLinkedList
              return -1;
          }*/
 
-        
         public void DisplayList()
         {
             Console.WriteLine("Displaying List!");
