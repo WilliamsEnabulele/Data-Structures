@@ -1,10 +1,14 @@
-﻿ using System;
+﻿using System.Collections;
 
 namespace MyLinkedList
 {
-    public class MyLinkedList<T>
+    /// <summary>
+    /// My Linked List Class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class MyLinkedList<T> : IEnumerable
     {
-        private Node<T> Head { get; set; }
+        public Node<T> Head { get; set; }
         public int count { get; set; }
 
         public MyLinkedList()
@@ -14,14 +18,14 @@ namespace MyLinkedList
         }
 
         /// <summary>
-        /// Adds an item to the tail of the linkedList and returns the linked list’s size
+        /// Adds an Item to the tail of the linkedList and returns the linked list’s size
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="Item"></param>
         /// <returns>Int Size</returns>
-        public int Add(T item)
+        public int Add(T Item)
         {
             Node<T> newNode = new Node<T>();
-            newNode.item = item;
+            newNode.Item = Item;
             if (this.Head == null)
             {
                 this.Head = newNode;
@@ -30,28 +34,28 @@ namespace MyLinkedList
             else
             {
                 Node<T> current = this.Head;
-                while (current.next != null)
+                while (current.Next != null)
                 {
-                    current = current.next;
+                    current = current.Next;
                 }
-                current.next = newNode;
+                current.Next = newNode;
                 count++;
             }
             return count;
         }
 
         /// <summary>
-        /// Removes the first occurrence of an item
+        /// Removes the first occurrence of an Item
         /// in the linked list, returns true if said
-        /// item is found and removed or returns
+        /// Item is found and removed or returns
         /// false otherwise
         /// </summary>
-        /// <param name="item"></param>
-        public bool Remove(T item)
+        /// <param name="Item"></param>
+        public bool Remove(T Item)
         {
-            if (this.Head.item.Equals(item))
+            if (this.Head.Item.Equals(Item))
             {
-                Head = Head.next;
+                Head = Head.Next;
                 count--;
                 return true;
             }
@@ -60,14 +64,14 @@ namespace MyLinkedList
                 Node<T> current = Head;
                 Node<T> currentPre = Head;
                 bool matched = false;
-                while (!(matched = current.item.Equals(item)) && current.next != null)
+                while (!(matched = current.Item.Equals(Item)) && current.Next != null)
                 {
                     currentPre = current;
-                    current = current.next;
+                    current = current.Next;
                 }
                 if (matched)
                 {
-                    currentPre.next = current.next;
+                    currentPre.Next = current.Next;
                     count--;
                     return true;
                 }
@@ -77,45 +81,69 @@ namespace MyLinkedList
         }
 
         /// <summary>
-        /// checks for a specified item in the linked list. Returns a boolean
+        /// checks for a specified Item in the linked list. Returns a boolean
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="Item"></param>
         /// <returns></returns>
-        public bool Check(T item)
+        public bool Check(T Item)
         {
             Node<T> current = this.Head;
             bool matched = false;
-            while (!(matched = current.item.Equals(item)) && current.next != null)
+            while (!(matched = current.Item.Equals(Item)) && current.Next != null)
             {
-                current = current.next;
+                current = current.Next;
             }
             return matched;
         }
 
         /// <summary>
-        /// Returns the index of an item or returns -1 if the item isn’t found
+        /// Returns the index of an Item or returns -1 if the Item isn’t found
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="Item"></param>
         /// <returns></returns>
-        /* public int Index(T item)
-         {
-             var count = 0;
-             for (var node = list.First; node != null; node = node.Next, count++)
-             {
-                 if (item.Equals(node.Value))
-                     return count;
-             }
-             return -1;
-         }*/
-
-        public void DisplayList()
+        public int Index(T Item)
         {
-            Console.WriteLine("Displaying List!");
-            Node<T> temp = this.Head;
-            while (temp != null)
+            Node<T> current = this.Head;
+            var count = 0;
+            for (var node = current; node != null; node = node.Next, count++)
             {
-                Console.WriteLine(temp.item);
-                temp = temp.next;
+                if (Item.Equals(node.Item))
+                    return count;
+            }
+            return -1;
+        }
+
+        public int Count()
+        {
+            return count;
+        }
+
+        /// <summary>
+        /// Adds an Item to the Head of the linkedList
+        /// </summary>
+        /// <param name="Item"></param>
+        public void AddAtHead(T Item)
+        {
+            Node<T> newNode = new Node<T>();
+            newNode.Item = Item;
+            if (this.Head == null)
+            {
+                this.Head = newNode;
+            }
+            else
+            {
+                newNode.Next = Head;
+                this.Head = newNode;
+            }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            Node<T> node = this.Head;
+            while (node != null)
+            {
+                yield return node.Item;
+                node = node.Next;
             }
         }
     }

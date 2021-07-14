@@ -1,9 +1,10 @@
 ﻿using MyLinkedList;
 using System;
+using System.Collections;
 
 namespace MyQueue
 {
-    public class MyQueue<T>
+    public class MyQueue<T> : IEnumerable
     {
         private Node<T> Head = new Node<T>();
         private Node<T> Tail = new Node<T>();
@@ -25,10 +26,11 @@ namespace MyQueue
             if (this.Tail == null)
             {
                 this.Head = this.Tail = newNode;
+                count++;
             }
             else
             {
-                this.Tail.next = newNode;
+                this.Tail.Next = newNode;
                 this.Tail = newNode;
                 count++;
             }
@@ -47,10 +49,10 @@ namespace MyQueue
             else
             {
                 Node<T> temp = this.Head;
-                this.Head = this.Head.next;
+                this.Head = this.Head.Next;
                 count--;
             }
-            return Head.item;
+            return Head.Item;
         }
 
         /// <summary>
@@ -85,6 +87,16 @@ namespace MyQueue
         private int counts
         {
             get { return this.count; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            Node<T> node = this.Head;
+            while (node != null)
+            {
+                yield return node.Item;
+                node = node.Next;
+            }
         }
     }
 }

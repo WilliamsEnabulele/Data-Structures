@@ -1,9 +1,10 @@
 ﻿using MyLinkedList;
 using System;
+using System.Collections;
 
 namespace MyStack
 {
-    public class MyStack<T>
+    public class MyStack<T> : IEnumerable
     {
         private Node<T> Top = new Node<T>();
         public int Count;
@@ -28,26 +29,26 @@ namespace MyStack
         }
 
         /// <summary>
-        /// Adds an item to the Bottom of the stack
+        /// Adds an Item to the Bottom of the stack
         /// </summary>
-        public void Push(T item)
+        public void Push(T Item)
         {
-            Node<T> newNode = new Node<T>(item);
+            Node<T> newNode = new Node<T>(Item);
 
             if (Top == null)
             {
-                newNode.next = null;
+                newNode.Next = null;
             }
             else
             {
-                newNode.next = Top;
+                newNode.Next = Top;
             }
             Top = newNode;
             Count++;
         }
 
         /// <summary>
-        /// Removes and returns the last item added to the stack
+        /// Removes and returns the last Item added to the stack
         /// </summary>
         public T Pop()
         {
@@ -55,16 +56,17 @@ namespace MyStack
             {
                 throw new Exception("Empty Stack");
             }
-            else
+            else if (Top.Next != null)
             {
-                Top = Top.next;
+                Top = Top.Next;
                 Count--;
+                return Top.Item;
             }
-            return Top.item;
+            else throw new Exception("Last Item is null");
         }
 
         /// <summary>
-        /// Returns the last item added to the stack
+        /// Returns the last Item added to the stack
         /// </summary>
         public T Peek()
         {
@@ -73,11 +75,11 @@ namespace MyStack
                 throw new Exception("Empty Stack");
             }
 
-            return Top.item;
+            return Top.Item;
         }
 
         /// <summary>
-        /// Shows the number of items currently in the stack
+        /// Shows the number of Items currently in the stack
         /// </summary>
         /// <returns>Integer</returns>
         public int Size()
@@ -100,6 +102,16 @@ namespace MyStack
         private int Counts
         {
             get { return Count; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            Node<T> node = this.Top;
+            while (node != null)
+            {
+                yield return node.Item;
+                node = node.Next;
+            }
         }
     }
 }

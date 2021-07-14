@@ -2,18 +2,18 @@
 {
     public class Node<T>
     {
-        public T item;
-        public Node<T> next;
+        public T Item;
+        public Node<T> Next;
 
         public Node()
         {
-            this.next = null;
+            this.Next = null;
         }
 
         public Node(T data)
         {
-            item = data;
-            next = null;
+            Item = data;
+            Next = null;
         }
     }
 }
