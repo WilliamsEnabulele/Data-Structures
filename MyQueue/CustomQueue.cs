@@ -1,16 +1,16 @@
-﻿using MyLinkedList;
+﻿using CustomLinkedList;
 using System;
 using System.Collections;
 
 namespace MyQueue
 {
-    public class MyQueue<T> : IEnumerable
+    public class CustomQueue<T> : IEnumerable
     {
         private Node<T> Head = new Node<T>();
         private Node<T> Tail = new Node<T>();
         private int count;
 
-        public MyQueue()
+        public CustomQueue()
         {
             Head = Tail = null;
             count = 0;
@@ -73,6 +73,16 @@ namespace MyQueue
             return counts;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            Node<T> node = this.Head;
+            while (node != null)
+            {
+                yield return node.Item;
+                node = node.Next;
+            }
+        }
+
         /// <summary>
         /// Empty Getter Method
         /// </summary>
@@ -87,16 +97,6 @@ namespace MyQueue
         private int counts
         {
             get { return this.count; }
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            Node<T> node = this.Head;
-            while (node != null)
-            {
-                yield return node.Item;
-                node = node.Next;
-            }
         }
     }
 }

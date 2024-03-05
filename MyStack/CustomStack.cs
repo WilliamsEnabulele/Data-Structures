@@ -1,10 +1,10 @@
-﻿using MyLinkedList;
+﻿using CustomLinkedList;
 using System;
 using System.Collections;
 
 namespace MyStack
 {
-    public class MyStack<T> : IEnumerable
+    public class CustomStack<T> : IEnumerable
     {
         private Node<T> Top = new Node<T>();
         public int Count;
@@ -13,7 +13,7 @@ namespace MyStack
         /// Constructor Method
         /// </summary>
         /// <param name="size"></param>
-        public MyStack()
+        public CustomStack()
         {
             this.Top = null;
             this.Count = 0;

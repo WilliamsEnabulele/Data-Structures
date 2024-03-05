@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.UI", "DataStructure.UI\DataStructure.UI.csproj", "{CDB72A8F-D618-41BF-B399-C2834A8FD7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure", "DataStructure.UI\DataStructure.csproj", "{CDB72A8F-D618-41BF-B399-C2834A8FD7AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLinkedList", "MyLinkedList\MyLinkedList.csproj", "{F05415E2-0C58-45E5-935D-518D33CEB208}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "MyLinkedList\CustomLinkedList.csproj", "{F05415E2-0C58-45E5-935D-518D33CEB208}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQueue", "MyQueue\MyQueue.csproj", "{75E9C9F6-71EA-44AA-9C1C-1700BDB7C318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomQueue", "MyQueue\CustomQueue.csproj", "{75E9C9F6-71EA-44AA-9C1C-1700BDB7C318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStack", "MyStack\MyStack.csproj", "{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomStack", "MyStack\CustomStack.csproj", "{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{238B53EE-2B5E-4365-AA1C-4C992ECA3433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datastructure.Test", "CustomDatastructure.Test\Datastructure.Test.csproj", "{7F20A02A-2C6D-4573-BEB0-50A91B1C36F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,19 @@ Global
 		{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F20A02A-2C6D-4573-BEB0-50A91B1C36F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F20A02A-2C6D-4573-BEB0-50A91B1C36F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F20A02A-2C6D-4573-BEB0-50A91B1C36F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F20A02A-2C6D-4573-BEB0-50A91B1C36F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDB72A8F-D618-41BF-B399-C2834A8FD7AA} = {238B53EE-2B5E-4365-AA1C-4C992ECA3433}
+		{F05415E2-0C58-45E5-935D-518D33CEB208} = {238B53EE-2B5E-4365-AA1C-4C992ECA3433}
+		{75E9C9F6-71EA-44AA-9C1C-1700BDB7C318} = {238B53EE-2B5E-4365-AA1C-4C992ECA3433}
+		{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8} = {238B53EE-2B5E-4365-AA1C-4C992ECA3433}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04C7D80B-F491-4EB2-BFDC-C91C255FDD2E}

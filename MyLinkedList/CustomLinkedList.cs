@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 
-namespace MyLinkedList
+namespace CustomLinkedList
 {
     /// <summary>
     /// My Linked List Class
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class MyLinkedList<T> : IEnumerable
+    public class CustomLinkedList<T> : IEnumerable
     {
         public Node<T> Head { get; set; }
         public int count { get; set; }
 
-        public MyLinkedList()
+        public CustomLinkedList()
         {
             this.Head = null;
             this.count = 0;

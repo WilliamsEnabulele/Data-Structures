@@ -1,4 +1,4 @@
-﻿namespace MyLinkedList
+﻿namespace CustomLinkedList
 {
     public class Node<T>
     {
