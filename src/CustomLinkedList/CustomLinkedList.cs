@@ -3,17 +3,17 @@
 namespace CustomLinkedList
 {
     /// <summary>
-    /// My Linked List Class
+    /// CustomLinkedList Class
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class CustomLinkedList<T> : IEnumerable
     {
         public Node<T> Head { get; set; }
-        public int count { get; set; }
+        private int count { get; set; }
 
         public CustomLinkedList()
         {
-            this.Head = null;
+            Head = null;
             this.count = 0;
         }
 
@@ -24,16 +24,19 @@ namespace CustomLinkedList
         /// <returns>Int Size</returns>
         public int Add(T Item)
         {
-            Node<T> newNode = new Node<T>();
-            newNode.Item = Item;
-            if (this.Head == null)
+            Node<T> newNode = new Node<T>
             {
-                this.Head = newNode;
+                Item = Item
+            };
+
+            if (Head == null)
+            {
+                Head = newNode;
                 count++;
             }
             else
             {
-                Node<T> current = this.Head;
+                Node<T> current = Head;
                 while (current.Next != null)
                 {
                     current = current.Next;
@@ -53,7 +56,7 @@ namespace CustomLinkedList
         /// <param name="Item"></param>
         public bool Remove(T Item)
         {
-            if (this.Head.Item.Equals(Item))
+            if (Head.Item.Equals(Item))
             {
                 Head = Head.Next;
                 count--;
@@ -63,7 +66,7 @@ namespace CustomLinkedList
             {
                 Node<T> current = Head;
                 Node<T> currentPre = Head;
-                bool matched = false;
+                bool matched;
                 while (!(matched = current.Item.Equals(Item)) && current.Next != null)
                 {
                     currentPre = current;
@@ -87,8 +90,8 @@ namespace CustomLinkedList
         /// <returns></returns>
         public bool Check(T Item)
         {
-            Node<T> current = this.Head;
-            bool matched = false;
+            Node<T> current = Head;
+            bool matched;
             while (!(matched = current.Item.Equals(Item)) && current.Next != null)
             {
                 current = current.Next;
@@ -103,7 +106,7 @@ namespace CustomLinkedList
         /// <returns></returns>
         public int Index(T Item)
         {
-            Node<T> current = this.Head;
+            Node<T> current = Head;
             var count = 0;
             for (var node = current; node != null; node = node.Next, count++)
             {
@@ -126,20 +129,22 @@ namespace CustomLinkedList
         {
             Node<T> newNode = new Node<T>();
             newNode.Item = Item;
-            if (this.Head == null)
+            if (Head == null)
             {
-                this.Head = newNode;
+                Head = newNode;
+                count++;
             }
             else
             {
                 newNode.Next = Head;
-                this.Head = newNode;
+                Head = newNode;
+                count++;
             }
         }
 
         public IEnumerator GetEnumerator()
         {
-            Node<T> node = this.Head;
+            Node<T> node = Head;
             while (node != null)
             {
                 yield return node.Item;

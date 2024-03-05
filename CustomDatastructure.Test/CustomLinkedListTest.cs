@@ -8,12 +8,13 @@ public class CustomLinkedListTest
     public void Add_AddItem_ReturnsCorrectSize()
     {
         // Arrange
-        var linkedList = new CustomLinkedList<int>();
-
-        // Act
-        linkedList.Add(10);
-        linkedList.Add(20);
-        linkedList.Add(30);
+        var linkedList = new CustomLinkedList<int>
+        {
+            // Act
+            10,
+            20,
+            30
+        };
 
         // Assert
         Assert.Equal(3, linkedList.Count());
@@ -23,10 +24,12 @@ public class CustomLinkedListTest
     public void Remove_RemoveItem_ReturnsTrueIfExists()
     {
         // Arrange
-        var linkedList = new CustomLinkedList<int>();
-        linkedList.Add(10);
-        linkedList.Add(20);
-        linkedList.Add(30);
+        var linkedList = new CustomLinkedList<int>
+        {
+            10,
+            20,
+            30
+        };
 
         // Act
         bool removed = linkedList.Remove(20);
@@ -40,10 +43,12 @@ public class CustomLinkedListTest
     public void Check_CheckItem_ReturnsTrueIfExists()
     {
         // Arrange
-        var linkedList = new CustomLinkedList<int>();
-        linkedList.Add(10);
-        linkedList.Add(20);
-        linkedList.Add(30);
+        var linkedList = new CustomLinkedList<int>
+        {
+            10,
+            20,
+            30
+        };
 
         // Act
         bool exists = linkedList.Check(20);
@@ -56,10 +61,12 @@ public class CustomLinkedListTest
     public void Index_FindItem_ReturnsCorrectIndex()
     {
         // Arrange
-        var linkedList = new CustomLinkedList<int>();
-        linkedList.Add(10);
-        linkedList.Add(20);
-        linkedList.Add(30);
+        CustomLinkedList<int> linkedList = new CustomLinkedList<int>
+        {
+            10,
+            20,
+            30
+        };
 
         // Act
         int index = linkedList.Index(20);
@@ -87,10 +94,12 @@ public class CustomLinkedListTest
     public void GetEnumerator_AddItems_EnumeratesInCorrectOrder()
     {
         // Arrange
-        var linkedList = new CustomLinkedList<int>();
-        linkedList.Add(10);
-        linkedList.Add(20);
-        linkedList.Add(30);
+        var linkedList = new CustomLinkedList<int>
+        {
+            10,
+            20,
+            30
+        };
 
         // Act
         int[] expectedItems = { 10, 20, 30 };

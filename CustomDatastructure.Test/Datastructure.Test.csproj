@@ -23,8 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyQueue\CustomQueue.csproj" />
-    <ProjectReference Include="..\MyStack\CustomStack.csproj" />
+    <ProjectReference Include="..\src\CustomLinkedList\CustomLinkedList.csproj" />
+    <ProjectReference Include="..\src\CustomQueue\CustomQueue.csproj" />
+    <ProjectReference Include="..\src\CustomStack\CustomStack.csproj" />
   </ItemGroup>
 
 </Project>

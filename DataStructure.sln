@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure", "DataStructure.UI\DataStructure.csproj", "{CDB72A8F-D618-41BF-B399-C2834A8FD7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure", "src\DataStructure\DataStructure.csproj", "{CDB72A8F-D618-41BF-B399-C2834A8FD7AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "MyLinkedList\CustomLinkedList.csproj", "{F05415E2-0C58-45E5-935D-518D33CEB208}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "src\CustomLinkedList\CustomLinkedList.csproj", "{F05415E2-0C58-45E5-935D-518D33CEB208}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomQueue", "MyQueue\CustomQueue.csproj", "{75E9C9F6-71EA-44AA-9C1C-1700BDB7C318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomQueue", "src\CustomQueue\CustomQueue.csproj", "{75E9C9F6-71EA-44AA-9C1C-1700BDB7C318}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomStack", "MyStack\CustomStack.csproj", "{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomStack", "src\CustomStack\CustomStack.csproj", "{AE1E6B79-7C16-4505-AD07-AA92A8EAA7C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{238B53EE-2B5E-4365-AA1C-4C992ECA3433}"
 EndProject

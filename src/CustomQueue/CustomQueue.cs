@@ -23,15 +23,16 @@ namespace MyQueue
         public void Enqueue(T item)
         {
             Node<T> newNode = new Node<T>(item);
-            if (this.Tail == null)
+
+            if (Tail == null)
             {
-                this.Head = this.Tail = newNode;
+                Head = Tail = newNode;
                 count++;
             }
             else
             {
-                this.Tail.Next = newNode;
-                this.Tail = newNode;
+                Tail.Next = newNode;
+                Tail = newNode;
                 count++;
             }
         }
@@ -40,19 +41,17 @@ namespace MyQueue
         /// Removes and returns the item at the Head of the queue
         /// </summary>
         /// <returns></returns>
-        public T Dequeue()
+        public void Dequeue()
         {
-            if (this.Head == null)
+            if (Head == null)
             {
                 throw new Exception("Empty Queue");
             }
             else
             {
-                Node<T> temp = this.Head;
-                this.Head = this.Head.Next;
+                Head = Head.Next;
                 count--;
             }
-            return Head.Item;
         }
 
         /// <summary>
@@ -70,12 +69,12 @@ namespace MyQueue
         /// <returns></returns>
         public int Size()
         {
-            return counts;
+            return Counts;
         }
 
         public IEnumerator GetEnumerator()
         {
-            Node<T> node = this.Head;
+            Node<T> node = Head;
             while (node != null)
             {
                 yield return node.Item;
@@ -88,15 +87,15 @@ namespace MyQueue
         /// </summary>
         private bool Empty
         {
-            get { return this.count == 0; }
+            get { return count == 0; }
         }
 
         /// <summary>
         /// counts getter method
         /// </summary>
-        private int counts
+        private int Counts
         {
-            get { return this.count; }
+            get { return count; }
         }
     }
 }
