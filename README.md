@@ -33,7 +33,7 @@ The `CustomLinkedList` class implements the linked list data structure. It consi
 To use these custom data structures in your C# project, follow these steps:
 
 1. Clone this repository to your local machine:
-   `git clone https://github.com/WilliamsEnabulele/CSharp-DataStructure-Implementation.git`
+   `git clone https://github.com/WilliamsEnabulele/Data-Structures.git`
 
 2. Include the necessary files (`CustomStack.cs`, `CustomQueue.cs`, and `CustomLinkedList.cs`) in your C# project.
 
